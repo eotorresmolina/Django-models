@@ -61,16 +61,16 @@ class ComicsAdmin(admin.ModelAdmin):
 
 @admin.register(WishList)
 class WishListAdmin(admin.ModelAdmin):
-    list_display = ('user_id', 'comid_id', 'favorite', 'cart')
+    list_display = ('user', 'comic', 'favorite', 'cart')
 
-    list_filter = ('user_id', 'comid_id')
+    list_filter = ('user', 'comic')
 
-    search_fields = ('comid_id',)
+    search_fields = ('comic',)
 
     fieldsets = (
         (None, 
             {
-                'fields': ('user_id', 'comid_id', 'favorite', 'cart')
+                'fields': ('user', 'comic', 'favorite', 'cart')
             }
         ), 
         ('Advanced Options', 

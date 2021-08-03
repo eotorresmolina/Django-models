@@ -77,10 +77,10 @@ class WishList(models.Model):
 
     id = models.BigAutoField(db_column='ID', primary_key=True)
 
-    user_id = models.ForeignKey(User, verbose_name='User', 
+    user = models.ForeignKey(User, verbose_name='User', 
         on_delete=models.DO_NOTHING, default=1, blank=True)
 
-    comid_id = models.ForeignKey(Comic, verbose_name='Comic', 
+    comic = models.ForeignKey(Comic, verbose_name='Comic', 
         on_delete=models.DO_NOTHING, default=1, blank=True)
 
     favorite = models.BooleanField(verbose_name='favorites',
