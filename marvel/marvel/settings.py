@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local apps: Acá ponemos el nombre de las carpetas de nuestras aplicaciónes
-    'e_commerce'
+    'applications.e_commerce'
 ]
 
 MIDDLEWARE = [
@@ -75,12 +75,12 @@ WSGI_APPLICATION = 'marvel.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # NOTE: Reemplazamos la configuración inicial de base de datos para trabajar con Postgres:
 # Recordemos:
     #   POSTGRES_DB: marvel_db
@@ -97,6 +97,17 @@ DATABASES = {
 #         'PORT': '5432'              # Número del puerto
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'marvel_db',        # POSTGRES_DB
+        'USER': 'inove_user',       # POSTGRES_USER
+        'PASSWORD': '123Marvel!',   # POSTGRES_PASSWORD
+        'HOST': 'db',              # Nombre del Servicio.
+        'PORT': '5432'              # Número del Puerto.
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
